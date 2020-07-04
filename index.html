@@ -1,0 +1,221 @@
+<html>
+	<head>
+		<title>Diffusion Simulation</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="container divided resumed" id="container">
+			<section class="left" >
+				<div class="box data-box" >
+					<label class="label">Data</label>
+					<div class="data" >
+						<div class="left-data" id="left-data" >
+							<div class="item left-items" style="margin-top: 0;" >
+								<div class="circle left-circle" ></div>
+								<div class="item-value label" >0</div>
+							</div>
+							<div class="item right-items" >
+								<div class="circle right-circle" ></div>
+								<div class="item-value label" >0</div>
+							</div>
+						</div>
+						<div class="divider vertical-divider" ></div>
+						<div class="right-data" id="right-data" >
+							<div class="item left-items" style="margin-top: 0;" >
+								<div class="circle left-circle" ></div>
+								<div class="item-value label" >0</div>
+							</div>
+							<div class="item right-items" >
+								<div class="circle right-circle" ></div>
+								<div class="item-value label" >0</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="canvasContainer" id="canvasContainer">
+					<div id="left_strip" class="strip left-strip" ></div>
+					<div id="right_strip" class="strip right-strip" ></div>
+				</div>
+
+				<div class="scale" id="scale" >
+					
+				</div>
+
+				<div class="flow left-flow" id="left_flow" >
+					<div class="left" >
+						<div class="before" ></div>
+					</div>
+					<div class="right" >
+						<div class="before" ></div>
+					</div>
+				</div>
+
+				<div class="flow right-flow" id="right_flow" >
+					<div class="left" >
+						<div class="before" ></div>
+					</div>
+					<div class="right" >
+						<div class="before" ></div>
+					</div>
+				</div>
+				
+			</section>
+			<section class="right" >
+				<div class="box">
+					<div class="entity-container" id="entity_container" >
+						<div class="entity" >
+							<label>Number Of Particles</label>
+							<div class="entity-inputs" >
+								<div class="entity-input left-entity-input" >
+									<div class="circle left-circle" ></div>
+									<input id="left_number" disabled="true" type="number" class="input" step="10" min="10" max="200" />
+									<div class="counters" >
+										<span class="counter incrementer" id="left_number_incrementer" ></span>
+										<span class="counter decrementer" id="left_number_decrementer" ></span>
+									</div>
+								</div>
+								<div class="entity-input right-entity-input" >
+									<div class="circle right-circle" ></div>
+									<input id="right_number" disabled="true" type="number" class="input" step="10" min="10" max="200" />
+									<div class="counters" >
+										<span class="counter incrementer" id="right_number_incrementer" ></span>
+										<span class="counter decrementer" id="right_number_decrementer" ></span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="entity" >
+							<label>Mass (AMU)</label>
+							<div class="entity-inputs" >
+								<div class="entity-input left-entity-input" >
+									<div class="circle left-circle" ></div>
+									<input id="left_mass" disabled="true" type="number" class="input" step="10" min="10" max="200" />
+									<div class="counters" >
+										<span class="counter incrementer" id="left_mass_incrementer" ></span>
+										<span class="counter decrementer" id="left_mass_decrementer" ></span>
+									</div>
+								</div>
+								<div class="entity-input right-entity-input" >
+									<div class="circle right-circle" ></div>
+									<input id="right_mass" disabled="true" type="number" class="input" step="10" min="10" max="200" />
+									<div class="counters" >
+										<span class="counter incrementer" id="right_mass_incrementer" ></span>
+										<span class="counter decrementer" id="right_mass_decrementer" ></span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="entity" >
+							<label>Radius (pm)</label>
+							<div class="entity-inputs" >
+								<div class="entity-input left-entity-input" >
+									<div class="circle left-circle" ></div>
+									<input id="left_radius" disabled="true" type="number" class="input" step="10" min="10" max="200" />
+									<div class="counters" >
+										<span class="counter incrementer" id="left_radius_incrementer" ></span>
+										<span class="counter decrementer" id="left_radius_decrementer" ></span>
+									</div>
+								</div>
+								<div class="entity-input right-entity-input" >
+									<div class="circle right-circle" ></div>
+									<input id="right_radius" disabled="true" type="number" class="input" step="10" min="10" max="200" />
+									<div class="counters" >
+										<span class="counter incrementer" id="right_radius_incrementer" ></span>
+										<span class="counter decrementer" id="right_radius_decrementer" ></span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="entity" >
+							<label>Temperature (K)</label>
+							<div class="entity-inputs" >
+								<div class="entity-input left-entity-input" >
+									<div class="entity-input circle left-circle" ></div>
+									<input id="left_temp" disabled="true" type="number" class="input" step="10" min="10" max="200" />
+									<div class="counters" >
+										<span class="counter incrementer" id="left_temp_incrementer" ></span>
+										<span class="counter decrementer" id="left_temp_decrementer" ></span>
+									</div>
+								</div>
+								<div class="entity-input right-entity-input" >
+									<div class="circle right-circle" ></div>
+									<input id="right_temp" disabled="true" type="number" class="input" step="10" min="10" max="200" />
+									<div class="counters" >
+										<span class="counter incrementer" id="right_temp_incrementer" ></span>
+										<span class="counter decrementer" id="right_temp_decrementer" ></span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="overlay" ></div>
+
+					</div>
+
+					<div class="btn-container" >
+						<div class="btn remove_divider" id="remove_divider" >Remove Divider</div>
+					</div>
+					<div class="btn-container">
+						<div class="btn reset_divider" id="reset_divider" >Reset Divider</div>
+					</div>
+
+					<div class="divider horizontal-divider" ></div>
+
+					<div class="functionality-container" id="functionality_container">
+						<div class="functionality" >
+							<label>Center Of Mass</label><div class="strip left-strip" ></div> <div class="strip right-strip" ></div>
+						</div>
+
+						<div class="functionality" >
+							<label>Particle Flow Rate</label>
+
+							<div class="flow left-flow" >
+								<div class="left" >
+									<div class="before" ></div>
+								</div>
+							</div>
+
+							<div class="flow right-flow" >
+								<div class="right" >
+									<div class="before" ></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="functionality" >
+							<label>Scale</label>
+							<div class="scale" id="scale" >
+								<div class="unit" ></div>
+								<div class="unit" ></div>
+								<div class="unit" ></div>
+								<div class="unit" ></div>
+							</div>
+						</div>
+
+					</div>
+					<div class="overlay" ></div>
+				</div>
+				<div class="resumer" >
+					<div class="pause" id="pause" ></div>
+					<div class="resume" id="resume" ></div>
+					<div class="iterator" id="iterator" ></div>
+				</div>
+			</section>
+		</div>
+		<script type="text/javascript" src="js/utils.js"></script>
+		<script type="text/javascript" src="js/heap.js"></script>
+		<script type="text/javascript" src="js/enums.js"></script>
+		<script type="text/javascript" src="js/physics.js"></script>
+		<script type="text/javascript" src="js/units.js"></script>
+		<script type="text/javascript" src="js/particle.js"></script>
+		<script type="text/javascript" src="js/event.js"></script>
+		<script type="text/javascript" src="js/simulator.js"></script>
+		<script type="text/javascript" src="js/viewController.js"></script>
+		<script type="text/javascript" src="js/appController.js"></script>
+		<script type="text/javascript" src="index.js"></script>
+	</body>
+</html>

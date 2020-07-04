@@ -1,0 +1,408 @@
+html {
+	font-size: 10px;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background: black;
+	font-family: monospace;
+}
+.container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+.left {
+	margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.right {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+}
+.box {
+	color: white;
+	border-radius: 5px;
+	background-color: #282828;
+	width: 250px;
+	padding: 20px;
+	position: relative;
+}
+.box.data-box {
+	margin-bottom: 40px;
+}
+
+
+.data {
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	margin-top: 15px;
+}
+
+.data .left-data, .data .right-data {
+	display: flex;
+	flex-direction: column;
+}
+
+.data .item {
+	display: flex;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.data .circle {
+	margin-right: 30px;
+}
+
+.divider {
+	border: 1px solid green;
+}
+
+.horizontal-divider {
+	margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.entity-container {
+	margin-bottom: 26px;
+}
+
+.entity-container, .functionality-container {
+	position: relative;
+}
+.functionality-container:last-child, .entity-container:last-child {
+	margin-bottom: 0;
+}
+
+.overlay {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.divided .functionality-container .overlay {
+	display: block;
+}
+
+.reset .entity-container .overlay {
+	display: block;
+}
+
+.paused .box .overlay {
+	display: block;
+}
+
+.entity, .functionality {
+	margin-bottom: 12px;
+}
+.functionality {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.entity label, .functionality label, .label {
+	font-size: 17px;
+}
+.entity-inputs {
+	display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+.entity-input {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+.circle {
+	width: 12px;
+	height: 12px;
+	border-radius: 10px;
+	margin-right: 10px;
+	background: white;
+}
+.input {
+	border-radius: 5px;
+    border-width: 0;
+    padding: 5px 0 5px 5px;
+    outline: none;
+    margin-right: 10px;
+}
+.counters {
+	position: relative;
+}
+.counters .incrementer, .counters .decrementer {
+	position: absolute;
+	border: 7px solid;
+	cursor: pointer;
+	
+    cursor: pointer;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+.counters .incrementer {
+	bottom: 2px;
+	border-top-color: transparent;
+}
+.counters .decrementer {
+	top: 2px;
+	border-bottom-color: transparent;
+}
+
+.btn-container {
+	display: flex;
+	justify-content: center;
+}
+.btn {
+	display: inline-block;
+	padding: 8px 20px;
+	border-radius: 5px;
+	background: rgba(59, 255, 0, 0.7);
+	outline: none;
+	cursor: pointer;
+	font-size: 18px;
+}
+
+.divided .reset_divider {
+	display: none;
+}
+
+.reset .remove_divider {
+	display: none;
+}
+
+
+.resumer {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	margin-top: 20px;
+	align-self: flex-start;
+	padding: 0 20px;
+}
+
+.pause, .resume {
+	width: 30px;
+	height: 30px;
+	border-radius: 20px;
+	background: #92c4f1;
+	cursor: pointer;
+	outline: none;
+	position: relative;
+}
+.iterator {
+	width: 25px;
+	height: 25px;
+	margin-left: 12px;
+	border-radius: 20px;
+	background: #92c4f1;
+	cursor: pointer;
+	outline: none;
+	position: relative;
+}
+.paused .pause {
+	display: none;
+}
+
+.resumed .resume {
+	display: none;
+}
+
+.resumed .iterator {
+	display: none;
+}
+
+.pause::before, .pause::after {
+	content: "";
+	position: absolute;
+	width: 4px;
+	height: 13px;
+	background: black;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.pause::before {
+	left: calc(50% - 5px);
+}
+
+.pause::after {
+	left: calc(50% + 2px);
+}
+
+.resume::before {
+	content: "";
+	position: absolute;
+	border: 10px solid;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	border-top-color: transparent;
+	top: 50%;
+	left: 50%;
+	transform: translate(-15%, -50%);
+}
+
+.iterator::before {
+	content: "";
+	position: absolute;
+	width: 3px;
+	height: 14px;
+	background: black;
+	left: calc(50% - 6px);
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.iterator::after {
+	content: "";
+	position: absolute;
+	border: 8px solid;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	border-top-color: transparent;
+	top: 50%;
+	left: 44%;
+	transform: translate(10%, -50%);
+}
+
+
+.canvas {
+	border: 3px solid white;
+	background-color: black;
+}
+
+
+.canvasContainer {
+	position: relative;
+}
+
+
+.strip {
+	position: absolute;
+    left: -20%;
+    bottom: -10px;
+    width: 5px;
+    height: 20px;
+    background: white;
+    border: 1px solid white;
+}
+
+.functionality .strip {
+	position: static;
+	margin-left: 20px;
+}
+
+.flow {
+	position: relative;
+	height: 10px;
+	width: 100%;
+    margin-top: 20px;
+}
+
+.functionality .flow {
+	width: auto;
+	flex: 1;
+	margin-top: 0;
+}
+.functionality .flow .left {
+	right: 5px;
+}
+.functionality .flow .right {
+	left: 5px;
+}
+
+.flow .left, .flow .right {
+	position: absolute;
+	height: 100%;
+	background: white;
+	width: 10px;
+	top: 0;
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.flow .left {
+	right: calc(50% + 5px);
+}
+
+.flow .left .before {
+	content: "";
+	position: absolute;
+	right: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+	border: 9px solid;
+	border-left-color: transparent;
+	border-right-color: white;
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+}
+
+.flow .right .before {
+	position: absolute;
+	left: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+	border: 9px solid;
+	border-left-color: white;
+	border-right-color: transparent;
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+}
+
+.flow .right {
+	left: calc(50% + 5px);
+}
+
+.scale {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	padding-left: 5px;
+}
+.scale .unit {
+	position: relative;
+	border-right: 1px solid white;
+	border-top: 1px solid white;
+	height: 15px;
+}
+.functionality .scale {
+	margin-left: 10px;
+}
+.functionality .scale .unit {
+	width: 20px;
+	height: 10px;
+}
+.scale .unit:first-child {
+	border-left: 1px solid white;
+}
+.scale .mid-line {
+	position: absolute;
+	width: 100%;
+	color: white;
+	left: 0;
+	top: 50%;
+	transform: translate(-2px, -50%);
+	font-size: 14px;
+}

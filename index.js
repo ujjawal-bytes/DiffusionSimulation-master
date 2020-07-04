@@ -1,0 +1,3 @@
+setTimeout(function() {
+	appController.init();
+});
